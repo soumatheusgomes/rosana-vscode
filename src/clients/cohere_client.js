@@ -14,7 +14,7 @@ const createCohereCompletion = async (apiKey, model, oneShotPrompt, temperature,
     p: 0.75,
     frequency_penalty: 0,
     presence_penalty: 0,
-    stop_sequences: ['USER:']
+    stop_sequences: ['VOCÊ:']
   }).catch((error) => {
     console.log(error)
     return { isError: true, status: error.status, body: error.response.body }

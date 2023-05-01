@@ -81,7 +81,7 @@
     const markedResponse = new DOMParser().parseFromString(marked.parse(msg.text + (inCodeBlock ? '\n```' : '')), 'text/html')
     const textWithMarkdown = markedResponse.documentElement.innerHTML
 
-    element.innerHTML = textWithMarkdown.replace('BOT:', '')
+    element.innerHTML = textWithMarkdown.replace('ROSANA:', '')
     const copyButtons = chatContainer.querySelectorAll('pre code')
     copyButtons.forEach((copyButton) => {
       if (copyButton.parentElement.querySelector('.copy-button') === null) {

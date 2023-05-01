@@ -40,7 +40,7 @@ const USER_AGENTS = [
 ]
 
 const URL_ERRORS = {
-  OpenAI: 'More information about this error: https://platform.openai.com/docs/guides/error-codess',
+  OpenAI: 'More information about this error: https://platform.openai.com/docs/guides/error-codes',
   Cohere: 'More information about this error: https://docs.cohere.ai/reference/errors#!'
 }
 

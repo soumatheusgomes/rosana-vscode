@@ -334,7 +334,8 @@ button#btn-question {
   outline: none;
   cursor: pointer;
   text-align: left;
-  color: var(--vscode-editorBracketHighlight-foreground1);
+  color: #ffffff;
+  font-weight: bold;
 }
 
 .initialTemplate li>button:hover {

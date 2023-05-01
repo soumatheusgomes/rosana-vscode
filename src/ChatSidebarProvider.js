@@ -219,9 +219,9 @@ class ChatSidebarProvider {
                 Para começar, basta selecionar uma seção de código e escolher uma das seguintes opções:
             </p>
             <ul>
-                <li>✨<button>Explique o código selecionado.</button></li>
-                <li>✨<button>Identifique quaisquer problemas no meu código selecionado.</button></li>
-                <li>✨<button>Criar testes unitários para meu código selecionado.</button></li>
+                <li>🤖<button>Explique o código selecionado.</button></li>
+                <li>🤖<button>Identifique quaisquer problemas no meu código selecionado.</button></li>
+                <li>🤖<button>Crie teste unitário para meu código selecionado.</button></li>
             </ul>
             <button id="btn-settings">Configurações</button>
         </div>

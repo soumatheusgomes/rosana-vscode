@@ -18,7 +18,7 @@ const createOpenAiCompletion = async (apiKey, model, oneShotPrompt, temperature,
     top_p: 1.0,
     frequency_penalty: 0.5,
     presence_penalty: 0.0,
-    stop: ['USER:']
+    stop: ['VOCÊ:']
   }).catch((error) => {
     console.log(error)
     return { isError: true, status: error.response.status, body: error.response.data.error }

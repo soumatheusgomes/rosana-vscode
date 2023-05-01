@@ -5,32 +5,61 @@
   "description": "Rosana é uma extensão que utiliza a API do OpenAI para auxiliar desenvolvedores na criação de código.",
   "license": "MIT",
   "icon": "logo.png",
-  "version": "1.1.1",
+  "version": "1.1.5",
   "engines": {
     "vscode": "^1.72.0"
   },
   "categories": [
     "Data Science",
+    "Debuggers",
+    "Education",
+    "Formatters",
+    "Linters",
     "Machine Learning",
     "Programming Languages",
     "Testing",
-    "Linters",
-    "Formatters",
-    "Education"
+    "Visualization"
   ],
   "keywords": [
-    "chatgpt",
-    "copilot",
-    "openai",
     "ai",
-    "codex",
+    "artificial",
+    "assistance",
+    "automated",
+    "chatbot",
+    "chatgpt",
+    "code",
+    "coding",
+    "completion",
+    "copilot",
+    "developer",
+    "development",
+    "generation",
+    "gpt-3",
+    "gpt-3.5",
+    "gpt-4",
     "gpt3",
-    "unit testing",
-    "cohere",
-    "rosana"
+    "gpt3.5",
+    "gpt4",
+    "help",
+    "intelligence",
+    "intelligent",
+    "language",
+    "learning",
+    "machine",
+    "natural",
+    "openai",
+    "processing",
+    "productivity",
+    "programming",
+    "quality",
+    "review",
+    "software",
+    "support",
+    "syntax",
+    "tools"
   ],
   "activationEvents": [
-    "*"
+    "onStartupFinished"
   ],
   "main": "./src/extension.js",
   "contributes": {
@@ -241,7 +270,8 @@
   "scripts": {
     "lint": "eslint . --fix",
     "pretest": "npm run lint",
-    "test": "node ./test/runTest.js"
+    "test": "node ./test/runTest.js",
+    "publish": "vsce package && vsce publish"
   },
   "devDependencies": {
     "@types/glob": "^8.0.0",

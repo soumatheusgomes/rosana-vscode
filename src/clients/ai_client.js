@@ -51,7 +51,7 @@ const createAICompletion = async (apiKey, model, oneShotPrompt, temperature, max
       applyToWhitespaces: false,
       applyToEmojis: false
     },
-    stopSequences: ['USER:']
+    stopSequences: ['VOCÊ:']
   }
 
   const url = `https://api.ai21.com/studio/v1/experimental/${model}/complete`

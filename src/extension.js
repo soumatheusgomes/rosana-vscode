@@ -72,7 +72,7 @@ async function getOpenAI(cleanPromptText, promptType, context) {
     if (token.isCancellationRequested) return
 
     // Update the progress bar
-    progress.report({ message: 'Eu estou pensando...' })
+    progress.report({ message: 'Estou pensando...' })
 
     try {
       if (model === 'gpt-3.5-turbo' || model === 'gpt-3.5-turbo-0301' || model === 'gpt-4' || model === 'gpt-4-32k') {
