@@ -1,0 +1,271 @@
+{
+  "name": "rosana",
+  "displayName": "Rosana - GPT4 Copilot",
+  "publisher": "matheusgomes",
+  "description": "Rosana é uma extensão que utiliza a API do OpenAI para auxiliar desenvolvedores na criação de código.",
+  "license": "MIT",
+  "icon": "logo.png",
+  "version": "1.1.1",
+  "engines": {
+    "vscode": "^1.72.0"
+  },
+  "categories": [
+    "Data Science",
+    "Machine Learning",
+    "Programming Languages",
+    "Testing",
+    "Linters",
+    "Formatters",
+    "Education"
+  ],
+  "keywords": [
+    "chatgpt",
+    "copilot",
+    "openai",
+    "ai",
+    "codex",
+    "gpt3",
+    "unit testing",
+    "cohere",
+    "rosana"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./src/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "rosana-sidebar-view",
+          "title": "Rosana Chat",
+          "icon": "media/bar.svg"
+        }
+      ]
+    },
+    "views": {
+      "rosana-sidebar-view": [
+        {
+          "type": "webview",
+          "id": "rosana-sidebar",
+          "name": "Rosana Chat",
+          "icon": "media/bar.svg",
+          "contextualTitle": "Rosana Chat"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Rosana",
+      "properties": {
+        "Rosana.apiKey": {
+          "type": "string",
+          "default": "OpenAI",
+          "markdownDescription": "Para inserir sua API KEY, pressione cmd+shift+p e procure por 'Rosana: Definir API KEY'. Selecione seu provedor de IA",
+          "enum": [
+            "OpenAI"
+          ]
+        },
+        "Rosana.model": {
+          "type": "string",
+          "default": "gpt-4",
+          "markdownDescription": "Modelo de linguagem utilizado",
+          "enum": [
+            "gpt-4",
+            "gpt-4-32k",
+            "gpt-3.5-turbo",
+            "text-davinci-003",
+            "text-curie-001",
+            "text-babbage-001",
+            "text-ada-001"
+          ],
+          "enumDescriptions": [
+            "gpt-4: Multimodal - OpenAI (Recomendado)",
+            "gpt-4-32k: Multimodal - OpenAI",
+            "gpt-3.5-turbo: ChatGPT - OpenAI",
+            "text-davinci-003: GPT-3 - OpenAI",
+            "text-curie-001: GPT-3 - OpenAI",
+            "text-babbage-001: GPT-3 - OpenAI",
+            "text-ada-001: GPT-3 - OpenAI"
+          ]
+        },
+        "Rosana.maxTokens": {
+          "type": "number",
+          "default": 3000,
+          "minimum": 800,
+          "markdownDescription": "O número máximo de tokens para cada solicitação"
+        },
+        "Rosana.temperature": {
+          "type": "number",
+          "default": 0.3,
+          "minimum": 0,
+          "maximum": 1,
+          "markdownDescription": "A temperatura. Deve estar entre 0 e 1"
+        },
+        "Rosana.query.language": {
+          "type": "string",
+          "default": "Portuguese",
+          "markdownDescription": "Selecione o idioma da query",
+          "enum": [
+            "English",
+            "Portuguese"
+          ]
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "rosana.askRosana",
+        "title": "🧠 - Prompt personalizado"
+      },
+      {
+        "command": "rosana.refactorRosana",
+        "title": "👩‍💻 - Refatorar código"
+      },
+      {
+        "command": "rosana.findProblemsRosana",
+        "title": "🔎 - Verificar correções"
+      },
+      {
+        "command": "rosana.documentRosana",
+        "title": "📝 - Documentar código"
+      },
+      {
+        "command": "rosana.explainRosana",
+        "title": "🤔 - Explicar código"
+      },
+      {
+        "command": "rosana.compileAndRunRosana",
+        "title": "🕹️ - Testar execução"
+      },
+      {
+        "command": "rosana.unitTestRosana",
+        "title": "🤖 - Criar teste unitário"
+      },
+      {
+        "command": "rosana.askStackOverflow",
+        "title": "Perguntar ao Stack Overflow"
+      },
+      {
+        "command": "rosana.searchApisRosana",
+        "title": "Pesquisar APIs Rosana"
+      },
+      {
+        "command": "rosana.getCode",
+        "title": "Obter código dos comentários"
+      },
+      {
+        "command": "rosana.setApiKeyRosana",
+        "title": "Rosana: Definir API KEY"
+      },
+      {
+        "command": "rosana.removeApiKeyRosana",
+        "title": "Rosana: Remover API KEY"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "rosana.getCode",
+        "key": "ctrl+shift+i",
+        "mac": "cmd+shift+i"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "rosana.askRosana",
+          "when": "editorTextFocus",
+          "group": "rosana-menu-group@1"
+        },
+        {
+          "command": "rosana.refactorRosana",
+          "when": "editorHasSelection",
+          "group": "rosana-menu-group@2"
+        },
+        {
+          "command": "rosana.findProblemsRosana",
+          "when": "editorHasSelection",
+          "group": "rosana-menu-group@3"
+        },
+        {
+          "command": "rosana.documentRosana",
+          "when": "editorHasSelection",
+          "group": "rosana-menu-group@4"
+        },
+        {
+          "command": "rosana.explainRosana",
+          "when": "editorHasSelection",
+          "group": "rosana-menu-group@5"
+        },
+        {
+          "command": "rosana.compileAndRunRosana",
+          "when": "editorHasSelection",
+          "group": "rosana-menu-group@6"
+        },
+        {
+          "command": "rosana.unitTestRosana",
+          "when": "editorHasSelection",
+          "group": "rosana-menu-group@7"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "rosana.askRosana"
+        },
+        {
+          "command": "rosana.explainRosana",
+          "when": "editorHasSelection"
+        },
+        {
+          "command": "rosana.compileAndRunRosana",
+          "when": "editorHasSelection"
+        },
+        {
+          "command": "rosana.refactorRosana",
+          "when": "editorHasSelection"
+        },
+        {
+          "command": "rosana.documentRosana",
+          "when": "editorHasSelection"
+        },
+        {
+          "command": "rosana.findProblemsRosana",
+          "when": "editorHasSelection"
+        },
+        {
+          "command": "rosana.unitTestRosana",
+          "when": "editorHasSelection"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "lint": "eslint . --fix",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.0.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.72.0",
+    "@vscode/test-electron": "^2.2.0",
+    "eslint": "^8.35.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "glob": "^8.0.3",
+    "mocha": "^10.1.0",
+    "typescript": "^4.9.3"
+  },
+  "dependencies": {
+    "axios": "^0.26.1",
+    "cheerio": "^1.0.0-rc.12",
+    "cohere-ai": "^5.0.2",
+    "openai": "^3.2.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/soumatheusgomes/rosana-vscode"
+  }
+}

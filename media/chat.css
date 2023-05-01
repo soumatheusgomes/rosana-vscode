@@ -1,0 +1,357 @@
+body {
+  padding: 0rem !important;
+}
+
+/* button[type="button"] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #007acc;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+} */
+
+button[type="button"] svg {
+  margin-left: 10px;
+}
+
+#app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* hides scrollbar */
+#chat_container::-webkit-scrollbar {
+  display: none;
+}
+
+.wrapper {
+  width: 100%;
+  padding: 15px;
+}
+
+.ai {
+  background: var(--vscode-menu-background);
+}
+
+.chat {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  align-items: flex-start;
+}
+
+.chat_header {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.chat_header span {
+  display: flex;
+  align-items: center;
+}
+
+.profile svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  padding: 0.2rem;
+  margin: 0;
+  background-color: #007acc;
+  color: #fff;
+}
+
+.ai .profile>svg {
+  background: #C83054;
+}
+
+.message {
+  flex: 1;
+  /*color: #dcdcdc;*/
+  width: 100%;
+  overflow-x: scroll;
+  white-space: pre-wrap;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* hides scrollbar */
+.message::-webkit-scrollbar {
+  display: none;
+}
+
+/* Nuevo */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0 !important;
+  max-width: 100%;
+  max-height: 100%;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+#app {
+  flex-direction: column;
+  padding: 0;
+  display: flex;
+  max-width: 100%;
+  margin: auto !important;
+  max-height: 100%;
+  height: 100vh;
+  scroll-behavior: auto;
+}
+
+#app>footer {
+  position: absolute;
+  bottom: .1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: .5rem;
+  margin: auto auto 0 auto;
+  width: 100%;
+  padding: 0.5rem;
+  background-color: var(--vscode-menu-background);
+  border: 2px solid var(--vscode-menu-border);
+}
+
+#app>footer>textarea {
+  margin: 0;
+}
+
+#chat_container {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 !important;
+  flex: 1;
+  overflow-y: scroll;
+  margin: auto auto 3rem auto;
+  /* scroll-behavior: smooth; */
+  background-color: transparent;
+  border: 1px solid var(--vscode-menu-border);
+}
+
+.wrapper {
+  max-width: 100%;
+  padding: .5rem;
+  width: 100%;
+}
+
+
+code,
+pre {
+  border-radius: .5rem;
+  position: relative;
+  width: 100%;
+}
+
+pre {
+  overflow: auto;
+}
+
+/* si pre tiene un hijo code  ambos tienen background: #background: #0d1117; */
+pre>code,
+pre {
+  background: #0d1117;
+}
+
+pre>code {
+  padding: 0 !important;
+}
+
+pre {
+  padding: 1rem;
+}
+
+#prompt {
+  width: 100%;
+  max-height: 15rem;
+  margin: 0 auto 0.5rem auto;
+  background-color: transparent;
+  resize: none;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.copy-button {
+  position: absolute;
+  width: 1.5rem;
+  height: 1.5rem;
+  right: 1rem;
+  top: 1rem;
+  background: #0d1117;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0;
+  margin: 0;
+  z-index: 2;
+}
+
+#btn-clear {
+  display: flex;
+  place-content: center;
+  width: 2rem;
+  height: 2rem;
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  outline: 1px solid transparent;
+  outline-offset: 2px !important;
+  align-items: center;
+  font-size: .75rem;
+  justify-content: center;
+  border-radius: 0.5rem;
+  margin: 0;
+}
+
+#btn-clear svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: var(--vscode-foreground);
+}
+
+#header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 0.5rem;
+  background-color: var(--vscode-menu-background);
+  border: 1px solid var(--vscode-menu-border);
+  border-bottom: none;
+  margin: 0;
+}
+
+.copy-button:hover,
+.copy-button:focus {
+  outline: none;
+  background: transparent;
+}
+
+.copy-button:focus svg>path {
+  fill: #007acc;
+}
+
+.copy-button:focus svg {
+  transform: scale(1.2);
+}
+
+
+#prompt:focus {
+  outline: none;
+}
+
+button#btn-question {
+  border: none;
+  text-align: center;
+  outline: 1px solid transparent;
+  outline-offset: 2px !important;
+  color: var(--vscode-button-foreground);
+  background: var(--vscode-button-background);
+  border-radius: 5px;
+  width: auto;
+  padding: 0.4rem 0.725rem;
+  display: flex;
+  align-items: center;
+  font-size: .75rem;
+  justify-content: center;
+  background: #C83054;
+  font-weight: bold;
+  color: white;
+}
+
+.initialTemplate {
+  display: flex;
+  flex-direction: column;
+  padding: 0.1rem 0;
+  font-size: .9rem;
+  line-height: 1.5rem;
+}
+
+.initialTemplate svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+#btn-settings {
+  background-image: linear-gradient(to right, #C83054 0%, #33001b 51%, #C83054 100%);
+  width: 50%;
+  align-self: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 5px;
+  display: block;
+}
+
+#btn-settings:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.initialTemplate ul {
+  list-style: none;
+}
+
+.initialTemplate li {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+/* remove all button styles */
+.initialTemplate li>button {
+  border: none;
+  background: transparent;
+  outline: none;
+  cursor: pointer;
+  text-align: left;
+  color: var(--vscode-editorBracketHighlight-foreground1);
+}
+
+.initialTemplate li>button:hover {
+  text-decoration: underline;
+}
+
+#stopResponse {
+  display: none;
+  position: absolute;
+  bottom: 3rem;
+  z-index: 2;
+  width: 100%;
+  color: var(--vscode-foreground);
+  background: var(--vscode-menu-background);
+  border: 1px solid var(--vscode-menu-border);
+  padding: 0.5rem;
+  text-align: center;
+  font-size: .9rem;
+  cursor: pointer;
+}
