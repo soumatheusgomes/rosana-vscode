@@ -5,7 +5,7 @@
   "description": "Rosana é uma extensão que utiliza a API do OpenAI para auxiliar desenvolvedores na criação de código.",
   "license": "MIT",
   "icon": "logo.png",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "engines": {
     "vscode": "^1.72.0"
   },
@@ -59,7 +59,7 @@
     "tools"
   ],
   "activationEvents": [
-    "onStartupFinished"
+    "*"
   ],
   "main": "./src/extension.js",
   "contributes": {
